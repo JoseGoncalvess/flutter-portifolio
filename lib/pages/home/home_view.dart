@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:portifolio/core/app.constants.dart';
+import 'package:portifolio/core/components/about_widget.dart';
+import 'package:portifolio/core/components/apresetation_widget.dart';
+import 'package:portifolio/core/components/custom__app_bar.dart';
 import 'package:portifolio/pages/home/home_view_model.dart';
 
 class HomeView extends HomeViewModel {
@@ -8,73 +10,25 @@ class HomeView extends HomeViewModel {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroudColor,
-      appBar: AppBar(
-        backgroundColor: backgroudColor,
-        title: Text(
-          "INICIO",
-          style: GoogleFonts.getFont(
-            'Roboto',
-            color: prymariColor,
-            fontSize: MediaQuery.sizeOf(context).width * 0.1,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.menu,
-              color: prymariColor,
-              size: MediaQuery.sizeOf(context).width * 0.1,
-            ),
-          ),
-        ],
-      ),
+      appBar: CustomAppBar(),
       body: SingleChildScrollView(
-        child: Container(
-          decoration: BoxDecoration(),
-          width: MediaQuery.sizeOf(context).width,
-          height: MediaQuery.sizeOf(context).height,
+        child: SizedBox(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(
-                width: MediaQuery.sizeOf(context).width,
-                height: MediaQuery.sizeOf(context).height * 0.7,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "OPA, EU SOU GONÇALVES",
-                      style: GoogleFonts.getFont(
-                        'Bebas Neue',
-                        color: Colors.white,
-                        fontSize: MediaQuery.sizeOf(context).width * 0.04,
-                      ),
-                    ),
-                    Text(
-                      "FLUTTER DEVELOPER",
-                      style: GoogleFonts.getFont(
-                        'Bebas Neue',
-                        color: prymariColor,
-                        fontSize: MediaQuery.sizeOf(context).width * 0.09,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      """Academico em Engenharia de software\n com um bom tempo como desenvolvedor mobile resolvendo muito bug.""",
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.getFont(
-                        'Roboto',
-                        color: Colors.white,
-                        fontSize: MediaQuery.sizeOf(context).width * 0.04,
-                      ),
-                    ),
-                  ],
-                ),
+              ApresetationWidget(
+                nameTitle: "OPA, EU SOU GONÇALVES",
+                position: "MOBILE DEVELOPER",
+                description:
+                    """Academico em Engenharia de software\n com um bom tempo como desenvolvedor mobile resolvendo muito bug.""",
               ),
+              AboutWidget(
+                position: "Desenvolvedor Flutter",
+                apresentation:
+                    """Com 3 anos de experiencia com desenvolviemnto flutter, tenho desenvolvido e prestadosuporte a plicações, sempre levando em consideração um codigo limpo e ergonazado.\n\n Possui conhecimento em outras tecnologias as quais também ultilizo ao desenvolver um nova soluçõa, tenho dedicado tempo a estudo de assuntos mais importantes como aruitetur, padrões de proejtos a medida que avanço na graduação deEngenahria de software.\n\n Criativo, compormetido e reposnavel, sou um excelente profisisonaldisposto a crescer e aprender cada vez mais !""",
+              ),
+              Container(height: MediaQuery.sizeOf(context).height),
             ],
           ),
         ),
