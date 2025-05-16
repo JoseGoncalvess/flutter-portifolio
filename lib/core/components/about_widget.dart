@@ -43,15 +43,13 @@ class _AboutWidgetState extends State<AboutWidget> {
                 ),
                 SizedBox(
                   height: MediaQuery.sizeOf(context).height * 0.43,
-                  child: Flexible(
-                    child: Text(
-                      widget.apresentation,
-                      textAlign: TextAlign.justify,
-                      style: GoogleFonts.roboto(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500,
-                        fontSize: MediaQuery.sizeOf(context).width * 0.04,
-                      ),
+                  child: Text(
+                    widget.apresentation,
+                    textAlign: TextAlign.justify,
+                    style: GoogleFonts.roboto(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                      fontSize: MediaQuery.sizeOf(context).width * 0.04,
                     ),
                   ),
                 ),

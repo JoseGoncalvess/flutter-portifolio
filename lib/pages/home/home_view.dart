@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portifolio/core/app.constants.dart';
 import 'package:portifolio/core/components/about_widget.dart';
 import 'package:portifolio/core/components/apresetation_widget.dart';
+import 'package:portifolio/core/components/contact_widget.dart';
 import 'package:portifolio/core/components/custom__app_bar.dart';
 import 'package:portifolio/core/components/project_widget.dart';
 import 'package:portifolio/core/components/skills_widget.dart';
@@ -32,6 +33,7 @@ class HomeView extends HomeViewModel {
               ),
               SkillsWidget(),
               ProjectWidget(),
+              ContactWidget(),
             ],
           ),
         ),
