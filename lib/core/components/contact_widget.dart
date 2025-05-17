@@ -19,32 +19,94 @@ class _ContactWidgetState extends State<ContactWidget> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            color: Colors.white,
             width: MediaQuery.sizeOf(context).width * 0.9,
-            height: MediaQuery.sizeOf(context).height * 0.3,
+            height: MediaQuery.sizeOf(context).height * 0.5,
             child: Column(
+              spacing: 8,
               children: [
                 Text(
                   "Contate-me",
                   style: GoogleFonts.bebasNeue(
-                    color: prymariColor,
+                    color: Colors.white,
                     fontSize: MediaQuery.sizeOf(context).width * 0.07,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                TextField(),
-                TextField(),
+                TextField(
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                  ),
+
+                  decoration: InputDecoration(
+                    hintText: "Assunto",
+                    hintStyle: GoogleFonts.roboto(
+                      color: Colors.white,
+                      fontSize: MediaQuery.sizeOf(context).width * 0.05,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    filled: true,
+                    fillColor: Colors.grey,
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: prymariColor, width: 2),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: double.infinity,
+                  child: TextField(
+                    maxLines: 5,
+                    keyboardType: TextInputType.multiline,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey,
+                      hintText: "Mensagem",
+                      hintStyle: GoogleFonts.roboto(
+                        color: Colors.white,
+                        fontSize: MediaQuery.sizeOf(context).width * 0.05,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: prymariColor, width: 2),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                  ),
+                ),
                 ElevatedButton.icon(
+                  style: ButtonStyle(
+                    backgroundColor: WidgetStateProperty.all(prymariColor),
+                    shape: WidgetStateProperty.all(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                  ),
                   onPressed: () {},
-                  label: Text("Enviar"),
-                  icon: Icon(Icons.keyboard_double_arrow_up_rounded),
+                  label: Text(
+                    "Enviar",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w300,
+                    ),
+                  ),
+                  icon: Icon(
+                    Icons.keyboard_double_arrow_up_rounded,
+                    color: Colors.white,
+                  ),
                 ),
               ],
             ),
           ),
-          Container(
+          SizedBox(
             width: MediaQuery.sizeOf(context).width * 0.9,
-            height: MediaQuery.sizeOf(context).height * 0.3,
+            height: MediaQuery.sizeOf(context).height * 0.2,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
