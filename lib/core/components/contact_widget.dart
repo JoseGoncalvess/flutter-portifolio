@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portifolio/core/app.constants.dart';
+import 'package:portifolio/core/services/url_service.dart';
 
 class ContactWidget extends StatefulWidget {
   const ContactWidget({super.key});
@@ -42,7 +43,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                     hintText: "Assunto",
                     hintStyle: GoogleFonts.roboto(
                       color: Colors.white,
-                      fontSize: MediaQuery.sizeOf(context).width * 0.05,
+                      fontSize: MediaQuery.sizeOf(context).width * 0.03,
                       fontWeight: FontWeight.bold,
                     ),
                     filled: true,
@@ -116,11 +117,25 @@ class _ContactWidgetState extends State<ContactWidget> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   spacing: 15,
-                  children: List.generate(
-                    3,
-                    (index) =>
-                        Container(width: 40, height: 40, color: Colors.grey),
-                  ),
+                  children:
+                      socialIcons
+                          .map(
+                            (icon) => GestureDetector(
+                              onTap: () => UrlService.openLink(url: icon.url),
+                              child: AnimatedContainer(
+                                duration: Duration(milliseconds: 200),
+                                curve: Curves.bounceOut,
+                                width: 40,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(icon.img),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          )
+                          .toList(),
                 ),
                 Text(
                   textAlign: TextAlign.center,
