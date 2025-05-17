@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:portifolio/core/models/data/social_icon.dart';
+
 final Color backgroudColor = const Color(0xFF000000);
 final Color prymariColor = const Color(0xFF1971c2);
 
@@ -25,4 +27,19 @@ final List<String> hardSkills = [
   "../assets/languages/html.png",
   "../assets/languages/vsCode.png",
   "../assets/languages/androidStudio.png",
+];
+
+final List<SocialIcon> socialIcons = [
+  SocialIcon(
+    img: "../assets/icons/youtube.png",
+    url: "https://www.youtube.com/@DevJGs/featured",
+  ),
+  SocialIcon(
+    img: "../assets/icons/linkedin.png",
+    url: "https://www.linkedin.com/in/jgoncalvessf",
+  ),
+  SocialIcon(
+    img: "../assets/icons/github.png",
+    url: "https://github.com/JoseGoncalvess",
+  ),
 ];
