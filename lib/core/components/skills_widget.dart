@@ -4,12 +4,18 @@ import 'package:portifolio/core/app.constants.dart';
 import 'package:portifolio/core/components/skills/hard_skills.dart';
 import 'package:portifolio/core/components/skills/soft_skills.dart';
 
-class SkillsWidget extends StatelessWidget {
+class SkillsWidget extends StatefulWidget {
   const SkillsWidget({super.key});
 
   @override
+  State<SkillsWidget> createState() => _SkillsWidgetState();
+}
+
+class _SkillsWidgetState extends State<SkillsWidget> {
+  int _currentPage = 0;
+  @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: MediaQuery.sizeOf(context).height,
       child: Column(
         children: [
@@ -29,10 +35,43 @@ class SkillsWidget extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     width: MediaQuery.sizeOf(context).width,
-                    height: MediaQuery.sizeOf(context).height * 0.6,
-                    child: PageView(children: [HardSkills(), SoftSkills()]),
+                    height: MediaQuery.sizeOf(context).height * 0.63,
+                    child: PageView(
+                      onPageChanged:
+                          (value) => setState(() {
+                            _currentPage = value;
+                          }),
+                      children: [HardSkills(), SoftSkills()],
+                    ),
+                  ),
+                  SizedBox(
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: List.generate(
+                        2,
+                        (index) => AnimatedContainer(
+                          duration: Duration(milliseconds: 350),
+                          curve: Curves.easeIn,
+                          width: _currentPage == index ? 20 : 10,
+                          height: 10,
+                          margin: EdgeInsets.only(right: 5),
+                          decoration: BoxDecoration(
+                            color:
+                                _currentPage == index
+                                    ? Colors.white
+                                    : Colors.grey,
+                            shape: BoxShape.rectangle,
+                            borderRadius:
+                                _currentPage == index
+                                    ? BorderRadius.circular(12)
+                                    : null,
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),

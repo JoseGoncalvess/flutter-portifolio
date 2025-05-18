@@ -56,7 +56,12 @@ class _AboutWidgetState extends State<AboutWidget> {
               ],
             ),
           ),
-          Image.asset("../assets/profile.png", fit: BoxFit.cover),
+          CircleAvatar(
+            backgroundColor: Colors.transparent,
+            foregroundColor: Colors.grey,
+            backgroundImage: AssetImage("../assets/profile.png"),
+            radius: 110,
+          ),
         ],
       ),
     );

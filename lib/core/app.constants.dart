@@ -43,3 +43,11 @@ final List<SocialIcon> socialIcons = [
     url: "https://github.com/JoseGoncalvess",
   ),
 ];
+
+final List<String> views = [
+  "Apresentação",
+  "Sobre",
+  "Habilidades",
+  "Projetos",
+  "Contato",
+];

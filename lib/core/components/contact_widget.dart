@@ -11,6 +11,16 @@ class ContactWidget extends StatefulWidget {
 }
 
 class _ContactWidgetState extends State<ContactWidget> {
+  final Map<String, bool> _hoverStates = {};
+
+  @override
+  void initState() {
+    super.initState();
+    for (var icon in socialIcons) {
+      _hoverStates[icon.img] = false;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,12 +48,11 @@ class _ContactWidgetState extends State<ContactWidget> {
                     color: Colors.white,
                     fontWeight: FontWeight.w600,
                   ),
-
                   decoration: InputDecoration(
                     hintText: "Assunto",
                     hintStyle: GoogleFonts.roboto(
                       color: Colors.white,
-                      fontSize: MediaQuery.sizeOf(context).width * 0.03,
+                      fontSize: MediaQuery.sizeOf(context).width * 0.04,
                       fontWeight: FontWeight.bold,
                     ),
                     filled: true,
@@ -70,7 +79,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                       hintText: "Mensagem",
                       hintStyle: GoogleFonts.roboto(
                         color: Colors.white,
-                        fontSize: MediaQuery.sizeOf(context).width * 0.05,
+                        fontSize: MediaQuery.sizeOf(context).width * 0.03,
                         fontWeight: FontWeight.bold,
                       ),
                       border: OutlineInputBorder(
@@ -122,14 +131,25 @@ class _ContactWidgetState extends State<ContactWidget> {
                           .map(
                             (icon) => GestureDetector(
                               onTap: () => UrlService.openLink(url: icon.url),
-                              child: AnimatedContainer(
-                                duration: Duration(milliseconds: 200),
-                                curve: Curves.bounceOut,
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage(icon.img),
+                              child: MouseRegion(
+                                onEnter:
+                                    (_) => setState(
+                                      () => _hoverStates[icon.img] = true,
+                                    ),
+                                onExit:
+                                    (_) => setState(
+                                      () => _hoverStates[icon.img] = false,
+                                    ),
+                                child: AnimatedContainer(
+                                  key: ValueKey(icon.img),
+                                  duration: Duration(milliseconds: 200),
+                                  curve: Curves.bounceOut,
+                                  width: _hoverStates[icon.img]! ? 60 : 40,
+                                  height: _hoverStates[icon.img]! ? 60 : 40,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: AssetImage(icon.img),
+                                    ),
                                   ),
                                 ),
                               ),
@@ -139,7 +159,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                 ),
                 Text(
                   textAlign: TextAlign.center,
-                  "Sempre traga algo algum conteudo, ou compartilho minha jornada",
+                  "Sempre trago algum conteúdo, ou compartilho minha jornada",
                   style: GoogleFonts.roboto(
                     color: Colors.white,
                     fontSize: MediaQuery.sizeOf(context).width * 0.04,
