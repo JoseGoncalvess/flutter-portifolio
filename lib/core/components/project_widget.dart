@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:portifolio/core/components/project_card.dart';
+import 'package:portifolio/core/models/data/project_repository.dart';
 
 class ProjectWidget extends StatefulWidget {
-  const ProjectWidget({super.key});
+  const ProjectWidget({super.key, required this.projects});
+  final List<ProjectRepository> projects;
 
   @override
   State<ProjectWidget> createState() => _ProjectWidgetState();
@@ -26,8 +28,13 @@ class _ProjectWidgetState extends State<ProjectWidget> {
                   (value) => setState(() {
                     _currentPage = value;
                   }),
-              itemCount: 4,
-              itemBuilder: (context, index) => ProjectCard(),
+              itemCount: widget.projects.length,
+              itemBuilder:
+                  (context, index) => ProjectCard(
+                    title: widget.projects[index].title,
+                    description: widget.projects[index].decription,
+                    tecnologys: widget.projects[index].languages,
+                  ),
             ),
           ),
           SizedBox(
@@ -36,7 +43,7 @@ class _ProjectWidgetState extends State<ProjectWidget> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(
-                4,
+                widget.projects.length,
                 (index) => AnimatedContainer(
                   duration: Duration(milliseconds: 350),
                   curve: Curves.easeIn,

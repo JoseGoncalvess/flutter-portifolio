@@ -49,7 +49,7 @@ class CustomAppBarState extends State<CustomAppBar> {
       centerTitle: true,
       actions: [
         IconButton(
-          onPressed: () => widget.ontap,
+          onPressed: () => widget.ontap!(),
           icon: Icon(
             Icons.menu,
             color: prymariColor,

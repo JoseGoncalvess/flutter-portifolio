@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portifolio/core/app.constants.dart';
-import 'package:portifolio/core/services/url_service.dart';
+import 'package:portifolio/core/services/impl/url_service_impl.dart';
 
 class ContactWidget extends StatefulWidget {
   const ContactWidget({super.key});
@@ -130,7 +130,9 @@ class _ContactWidgetState extends State<ContactWidget> {
                       socialIcons
                           .map(
                             (icon) => GestureDetector(
-                              onTap: () => UrlService.openLink(url: icon.url),
+                              onTap:
+                                  () =>
+                                      UrlServiceImpl().openLink(url: icon.url),
                               child: MouseRegion(
                                 onEnter:
                                     (_) => setState(

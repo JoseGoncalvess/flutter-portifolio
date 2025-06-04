@@ -3,7 +3,15 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portifolio/core/app.constants.dart';
 
 class ProjectCard extends StatefulWidget {
-  const ProjectCard({super.key});
+  const ProjectCard({
+    super.key,
+    required this.title,
+    required this.description,
+    required this.tecnologys,
+  });
+  final String title;
+  final String description;
+  final List<String> tecnologys;
 
   @override
   State<ProjectCard> createState() => _ProjectCardState();
@@ -33,7 +41,7 @@ class _ProjectCardState extends State<ProjectCard> {
               ),
             ),
             Text(
-              "TITULO",
+              widget.title,
               style: GoogleFonts.bebasNeue(
                 color: prymariColor,
                 fontSize: MediaQuery.sizeOf(context).width * 0.09,
@@ -44,7 +52,7 @@ class _ProjectCardState extends State<ProjectCard> {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 textAlign: TextAlign.center,
-                """Mussum Ipsum, cacilds vidis litro abertis.  Mé faiz elementum girarzis, nisi eros vermeio. Copo furadis é disculpa de bebadis, arcu quam euismod magna. Vehicula non. Ut sed ex eros. Vivamus.""",
+                widget.description,
                 style: GoogleFonts.roboto(
                   color: Colors.white,
                   fontSize: MediaQuery.sizeOf(context).width * 0.04,
@@ -70,7 +78,7 @@ class _ProjectCardState extends State<ProjectCard> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: List.generate(
-                      4,
+                      widget.tecnologys.length,
                       (index) => Container(
                         width: 50,
                         height: 50,
