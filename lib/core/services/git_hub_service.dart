@@ -1,2 +1,6 @@
-// URL_BASE = "https://api.github.com/users/JoseGoncalvess/repos";
-// / /URL_LANGAGES= "https://api.github.com/repos/JoseGoncalvess/Card-credit/languages"
+import 'package:portifolio/core/models/data/project_repository.dart';
+
+abstract class GitHubService {
+  Future<List<ProjectRepository>> getAllRepositories();
+  Future<List<String>> getLanguagesOfRepository(String url);
+}
