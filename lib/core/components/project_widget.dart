@@ -34,6 +34,7 @@ class _ProjectWidgetState extends State<ProjectWidget> {
                     title: widget.projects[index].title,
                     description: widget.projects[index].decription,
                     tecnologys: widget.projects[index].languages,
+                    img: widget.projects[index].img,
                   ),
             ),
           ),

@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portifolio/core/app.constants.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class ProjectCard extends StatefulWidget {
   const ProjectCard({
     super.key,
     required this.title,
+    required this.img,
     required this.description,
     required this.tecnologys,
   });
   final String title;
+  final String img;
   final String description;
   final List<String> tecnologys;
 
@@ -35,9 +39,9 @@ class _ProjectCardState extends State<ProjectCard> {
                 width: MediaQuery.sizeOf(context).width * 0.7,
                 height: MediaQuery.sizeOf(context).height * 0.3,
                 decoration: BoxDecoration(
-                  color: Colors.red,
                   borderRadius: BorderRadius.circular(12),
                 ),
+                child: Image.network(widget.img),
               ),
             ),
             Text(
@@ -62,33 +66,39 @@ class _ProjectCardState extends State<ProjectCard> {
             ),
             SizedBox(
               width: MediaQuery.sizeOf(context).width,
-              height: MediaQuery.sizeOf(context).height * 0.13,
+              height: MediaQuery.sizeOf(context).width * 0.3,
               child: Column(
                 children: [
                   Text(
                     "TECNOLOGIAS:",
                     style: GoogleFonts.roboto(
                       color: Colors.white,
-                      fontSize: MediaQuery.sizeOf(context).width * 0.09,
+                      fontSize: MediaQuery.sizeOf(context).width * 0.05,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Row(
-                    spacing: 5,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(
-                      widget.tecnologys.length,
-                      (index) => Container(
-                        width: 50,
-                        height: 50,
+                  Wrap(
+                    spacing: 5, // Espaçamento horizontal entre os ícones
+                    runSpacing:
+                        5, // Espaçamento vertical entre as linhas de ícones
+                    alignment: WrapAlignment.center,
+                    children: List.generate(widget.tecnologys.length, (index) {
+                      String tecnology = widget.tecnologys[index]
+                          .toLowerCase()
+                          .replaceAll("Objective-C", "cbjectivec")
+                          .replaceFirst("html", "html5")
+                          .replaceAll("c++", "cplusplus");
+                      return Container(
+                        width: 35,
+                        height: 35,
                         decoration: BoxDecoration(
-                          color: Colors.grey,
                           borderRadius: BorderRadius.circular(12),
                         ),
-                        child: Text("$index"),
-                      ),
-                    ),
+                        child: SvgPicture.network(
+                          "https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/$tecnology/$tecnology-original.svg",
+                        ),
+                      );
+                    }),
                   ),
                 ],
               ),

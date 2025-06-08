@@ -20,7 +20,11 @@ class GitHubServiceImpl implements GitHubService {
           repo["language"] = await getLanguagesOfRepository(
             repo["languages_url"],
           );
-          projetos.add(ProjectRepository.fromMap(repo));
+          ProjectRepository newproject = ProjectRepository.fromMap(repo);
+          newproject.languages.remove("Objective-C");
+          newproject.img = ProjectRepository.getSrcProject(newproject.title);
+
+          projetos.add(newproject);
         }
       }
     } catch (e) {

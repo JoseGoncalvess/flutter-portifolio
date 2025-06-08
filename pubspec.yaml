@@ -1,8 +1,8 @@
 name: portifolio
-description: "Projeto de Portifolio Pessoal Totalmente em Flutter"
+description: 'Projeto de Portifolio Pessoal Totalmente em Flutter'
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: "none" # Remove this line if you wish to publish to pub.dev
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -37,6 +37,7 @@ dependencies:
   google_fonts: ^6.2.1
   url_launcher: ^6.3.1
   dio: ^5.8.0+1
+  flutter_svg: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +65,7 @@ flutter:
     - assets/
     - assets/languages/
     - assets/icons/
+    - assets/projects views/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

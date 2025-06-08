@@ -4,7 +4,7 @@ import 'dart:convert';
 class ProjectRepository {
   final String title;
   final String decription;
-  final String img;
+  late String img;
   final String path;
   final List<String> languages;
 
@@ -34,6 +34,10 @@ class ProjectRepository {
       path: map['html_url'],
       languages: List<String>.from((map['language'])),
     );
+  }
+
+  static String getSrcProject(String title) {
+    return "https://raw.githubusercontent.com/JoseGoncalvess/flutter-portifolio/refs/heads/main/assets/projects%20views/$title.png";
   }
 
   String toJson() => json.encode(toMap());
