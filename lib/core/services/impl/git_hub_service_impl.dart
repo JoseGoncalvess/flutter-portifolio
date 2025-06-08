@@ -13,10 +13,7 @@ class GitHubServiceImpl implements GitHubService {
     try {
       final response = await _dio.get(
         '${baseURL}/users/JoseGoncalvess/repos',
-        queryParameters: {
-          'per_page': 100, // Número máximo permitido por página
-          'page': 1, // Página inicial
-        },
+        queryParameters: {'per_page': 100, 'page': 1},
       );
       for (var repo in response.data) {
         if (repo["topics"].contains("portifolio")) {

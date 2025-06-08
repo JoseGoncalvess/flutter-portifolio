@@ -6,7 +6,6 @@ import 'package:portifolio/core/components/contact_widget.dart';
 import 'package:portifolio/core/components/custom__app_bar.dart';
 import 'package:portifolio/core/components/project_widget.dart';
 import 'package:portifolio/core/components/skills_widget.dart';
-import 'package:portifolio/core/services/impl/git_hub_service_impl.dart';
 import 'package:portifolio/pages/home/home_view_model.dart';
 
 class HomeView extends HomeViewModel {
@@ -14,12 +13,7 @@ class HomeView extends HomeViewModel {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroudColor,
-      appBar: CustomAppBar(
-        titlePage: title,
-        ontap: () {
-          GitHubServiceImpl().getAllRepositories();
-        },
-      ),
+      appBar: CustomAppBar(titlePage: title, ontap: () {}),
       body: SizedBox(
         height: MediaQuery.sizeOf(context).height,
         child: PageView(
