@@ -32,24 +32,34 @@ class _AboutWidgetState extends State<AboutWidget> {
                 SizedBox(
                   width: MediaQuery.sizeOf(context).width,
                   child: Text(
-                    textAlign: TextAlign.left,
+                    textAlign: TextAlign.center,
                     widget.position,
                     style: GoogleFonts.roboto(
                       color: prymariColor,
-                      fontSize: MediaQuery.sizeOf(context).width * 0.07,
+                      fontSize: MediaQuery.sizeOf(context).width * 0.05,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
                 SizedBox(
                   height: MediaQuery.sizeOf(context).height * 0.43,
+                  width:
+                      MediaQuery.sizeOf(context).width < 768
+                          ? null
+                          : MediaQuery.sizeOf(context).width * 0.8,
                   child: Text(
                     widget.apresentation,
-                    textAlign: TextAlign.justify,
+                    textAlign:
+                        MediaQuery.sizeOf(context).width < 768
+                            ? TextAlign.justify
+                            : TextAlign.center,
                     style: GoogleFonts.roboto(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
-                      fontSize: MediaQuery.sizeOf(context).width * 0.04,
+                      fontSize:
+                          MediaQuery.sizeOf(context).width < 768
+                              ? MediaQuery.sizeOf(context).width * 0.04
+                              : MediaQuery.sizeOf(context).width * 0.03,
                     ),
                   ),
                 ),

@@ -52,3 +52,8 @@ final List<String> views = [
   "Projetos",
   "Contato",
 ];
+final List<String> languages = [
+  "Espanhol Intermediário (B1)",
+  "Inglês Básico (A1)",
+  "Português (NATIVO)",
+];

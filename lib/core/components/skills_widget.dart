@@ -20,24 +20,16 @@ class _SkillsWidgetState extends State<SkillsWidget> {
       child: Column(
         children: [
           Expanded(
-            flex: 3,
+            flex: 2,
             child: SizedBox(
               width: MediaQuery.sizeOf(context).width,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    "Habilidades",
-                    style: GoogleFonts.bebasNeue(
-                      color: Colors.white,
-                      fontSize: MediaQuery.sizeOf(context).width * 0.07,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
                   SizedBox(
                     width: MediaQuery.sizeOf(context).width,
-                    height: MediaQuery.sizeOf(context).height * 0.63,
+                    height: MediaQuery.sizeOf(context).height * 0.5,
                     child: PageView(
                       onPageChanged:
                           (value) => setState(() {
@@ -77,45 +69,32 @@ class _SkillsWidgetState extends State<SkillsWidget> {
               ),
             ),
           ),
+          Text(
+            "Indiomas",
+            style: GoogleFonts.bebasNeue(
+              color: prymariColor,
+              fontSize: MediaQuery.sizeOf(context).width * 0.06,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           Expanded(
             flex: 1,
             child: SizedBox(
               width: MediaQuery.sizeOf(context).width,
               child: Column(
-                children: [
-                  Text(
-                    "Indiomas:",
-                    style: GoogleFonts.bebasNeue(
-                      color: prymariColor,
-                      fontSize: MediaQuery.sizeOf(context).width * 0.08,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    "Espanhol Intermediário (B1)",
-                    style: GoogleFonts.roboto(
-                      color: Colors.white,
-                      fontSize: MediaQuery.sizeOf(context).width * 0.06,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  Text(
-                    "Inglês Básico (A1)",
-                    style: GoogleFonts.roboto(
-                      color: Colors.white,
-                      fontSize: MediaQuery.sizeOf(context).width * 0.06,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  Text(
-                    "Português (NATIVO)",
-                    style: GoogleFonts.roboto(
-                      color: Colors.white,
-                      fontSize: MediaQuery.sizeOf(context).width * 0.06,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
+                children:
+                    languages
+                        .map(
+                          (l) => Text(
+                            l,
+                            style: GoogleFonts.roboto(
+                              color: Colors.white,
+                              fontSize: MediaQuery.sizeOf(context).width * 0.04,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        )
+                        .toList(),
               ),
             ),
           ),

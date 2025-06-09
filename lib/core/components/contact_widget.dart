@@ -23,13 +23,13 @@ class _ContactWidgetState extends State<ContactWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: MediaQuery.sizeOf(context).height,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
+          SizedBox(
             width: MediaQuery.sizeOf(context).width * 0.9,
             height: MediaQuery.sizeOf(context).height * 0.5,
             child: Column(
@@ -91,6 +91,10 @@ class _ContactWidgetState extends State<ContactWidget> {
                 ),
                 ElevatedButton.icon(
                   style: ButtonStyle(
+                    fixedSize:
+                        MediaQuery.sizeOf(context).width < 768
+                            ? null
+                            : WidgetStateProperty.all(Size(300, 100)),
                     backgroundColor: WidgetStateProperty.all(prymariColor),
                     shape: WidgetStateProperty.all(
                       RoundedRectangleBorder(
@@ -104,9 +108,17 @@ class _ContactWidgetState extends State<ContactWidget> {
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w300,
+                      fontSize:
+                          MediaQuery.sizeOf(context).width < 768
+                              ? null
+                              : MediaQuery.sizeOf(context).width * 0.04,
                     ),
                   ),
                   icon: Icon(
+                    size:
+                        MediaQuery.sizeOf(context).width < 768
+                            ? null
+                            : MediaQuery.sizeOf(context).width * 0.04,
                     Icons.keyboard_double_arrow_up_rounded,
                     color: Colors.white,
                   ),

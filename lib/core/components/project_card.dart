@@ -41,7 +41,10 @@ class _ProjectCardState extends State<ProjectCard> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: Image.network(widget.img),
+                child: Image.network(
+                  widget.img,
+                  errorBuilder: (context, error, stackTrace) => Container(),
+                ),
               ),
             ),
             Text(
@@ -59,7 +62,10 @@ class _ProjectCardState extends State<ProjectCard> {
                 widget.description,
                 style: GoogleFonts.roboto(
                   color: Colors.white,
-                  fontSize: MediaQuery.sizeOf(context).width * 0.04,
+                  fontSize:
+                      MediaQuery.sizeOf(context).width < 768
+                          ? MediaQuery.sizeOf(context).width * 0.04
+                          : MediaQuery.sizeOf(context).width * 0.03,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -73,14 +79,13 @@ class _ProjectCardState extends State<ProjectCard> {
                     "TECNOLOGIAS:",
                     style: GoogleFonts.roboto(
                       color: Colors.white,
-                      fontSize: MediaQuery.sizeOf(context).width * 0.05,
+                      fontSize: MediaQuery.sizeOf(context).width * 0.03,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Wrap(
-                    spacing: 5, // Espaçamento horizontal entre os ícones
-                    runSpacing:
-                        5, // Espaçamento vertical entre as linhas de ícones
+                    spacing: 5,
+                    runSpacing: 5,
                     alignment: WrapAlignment.center,
                     children: List.generate(widget.tecnologys.length, (index) {
                       String tecnology = widget.tecnologys[index]

@@ -40,8 +40,8 @@ class CustomAppBarState extends State<CustomAppBar> {
           key: ValueKey<String>(widget.titlePage),
           widget.titlePage,
           style: GoogleFonts.roboto(
-            color: prymariColor,
-            fontSize: MediaQuery.sizeOf(context).width * 0.1,
+            color: Colors.white,
+            fontSize: MediaQuery.sizeOf(context).width * 0.07,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -53,7 +53,7 @@ class CustomAppBarState extends State<CustomAppBar> {
           icon: Icon(
             Icons.menu,
             color: prymariColor,
-            size: MediaQuery.sizeOf(context).width * 0.1,
+            size: MediaQuery.sizeOf(context).width * 0.07,
           ),
         ),
       ],

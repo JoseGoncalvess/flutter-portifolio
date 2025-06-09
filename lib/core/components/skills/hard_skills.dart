@@ -16,11 +16,11 @@ class HardSkills extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Tecnologia:",
+              "Tecnologias",
               style: GoogleFonts.bebasNeue(
                 color: prymariColor,
-                fontSize: MediaQuery.sizeOf(context).width * 0.07,
-                fontWeight: FontWeight.w400,
+                fontSize: MediaQuery.sizeOf(context).width * 0.06,
+                fontWeight: FontWeight.bold,
               ),
             ),
             GridView.builder(
@@ -28,19 +28,15 @@ class HardSkills extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 4,
-                childAspectRatio: 0.7,
-                crossAxisSpacing: 1,
-                mainAxisSpacing: 1,
+                childAspectRatio: 1.5,
+                crossAxisSpacing: 2,
+                mainAxisSpacing: 2,
               ),
               itemCount: hardSkills.length,
               itemBuilder:
                   (context, index) => Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Image.asset(
-                      hardSkills[index],
-                      scale: 0.2,
-                      fit: BoxFit.contain,
-                    ),
+                    padding: const EdgeInsets.all(3.0),
+                    child: Image.asset(hardSkills[index], fit: BoxFit.contain),
                   ),
             ),
           ],
