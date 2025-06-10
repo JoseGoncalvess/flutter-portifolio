@@ -8,11 +8,13 @@ class ApresetationWidget extends StatefulWidget {
     required this.nameTitle,
     required this.position,
     required this.description,
+    required this.constexParent,
   });
 
   final String nameTitle;
   final String position;
   final String description;
+  final BoxConstraints constexParent;
 
   @override
   State<ApresetationWidget> createState() => _ApresetationWidgetState();
@@ -28,25 +30,34 @@ class _ApresetationWidgetState extends State<ApresetationWidget> {
         children: [
           Text(
             widget.nameTitle,
-            style: GoogleFonts.bebasNeue(
+            style: GoogleFonts.robotoSlab(
               color: Colors.white,
-              fontSize: MediaQuery.sizeOf(context).width * 0.04,
+              fontSize:
+                  MediaQuery.sizeOf(context).width > 360
+                      ? widget.constexParent.maxWidth * 0.02
+                      : MediaQuery.sizeOf(context).width * 0.04,
             ),
           ),
           Text(
             widget.position,
             style: GoogleFonts.bebasNeue(
               color: prymariColor,
-              fontSize: MediaQuery.sizeOf(context).width * 0.09,
+              fontSize:
+                  MediaQuery.sizeOf(context).width > 360
+                      ? widget.constexParent.maxWidth * 0.06
+                      : MediaQuery.sizeOf(context).width * 0.09,
               fontWeight: FontWeight.bold,
             ),
           ),
           Text(
             widget.description,
             textAlign: TextAlign.center,
-            style: GoogleFonts.roboto(
+            style: GoogleFonts.robotoSlab(
               color: Colors.white,
-              fontSize: MediaQuery.sizeOf(context).width * 0.04,
+              fontSize:
+                  MediaQuery.sizeOf(context).width > 360
+                      ? widget.constexParent.maxWidth * 0.03
+                      : MediaQuery.sizeOf(context).width * 0.04,
             ),
           ),
         ],

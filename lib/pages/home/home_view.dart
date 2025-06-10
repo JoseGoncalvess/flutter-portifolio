@@ -13,29 +13,37 @@ class HomeView extends HomeViewModel {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroudColor,
-      appBar: CustomAppBar(titlePage: title, ontap: () {}),
-      body: SizedBox(
-        height: MediaQuery.sizeOf(context).height,
-        child: PageView(
-          scrollDirection: Axis.vertical,
-          onPageChanged: (value) => updateViewTitle(value),
-          children: [
-            ApresetationWidget(
-              nameTitle: "OPA, EU SOU GONÇALVES",
-              position: "MOBILE DEVELOPER",
-              description:
-                  """Academico em Engenharia de software\n com um bom tempo como desenvolvedor mobile resolvendo muito bug.""",
+      appBar: CustomAppBar(context: context, titlePage: title, ontap: () {}),
+      body: LayoutBuilder(
+        builder:
+            (context, constraints) => Center(
+              child: Container(
+                constraints: BoxConstraints(maxWidth: 800),
+                height: constraints.maxHeight,
+                child: PageView(
+                  scrollDirection: Axis.vertical,
+                  onPageChanged: (value) => updateViewTitle(value),
+                  children: [
+                    ApresetationWidget(
+                      constexParent: constraints,
+                      nameTitle: "OPA, EU SOU GONÇALVES",
+                      position: "MOBILE DEVELOPER",
+                      description:
+                          """Academico em Engenharia de software\n com um bom tempo como desenvolvedor mobile resolvendo muito bug.""",
+                    ),
+                    AboutWidget(
+                      constexParent: constraints,
+                      position: "Desenvolvedor Flutter",
+                      apresentation:
+                          """Com 3 anos de experiencia com desenvolviemnto flutter, tenho desenvolvido e prestadosuporte a plicações, sempre levando em consideração um codigo limpo e ergonazado.\n\n Possui conhecimento em outras tecnologias as quais também ultilizo ao desenvolver um nova soluçõa, tenho dedicado tempo a estudo de assuntos mais importantes como aruitetur, padrões de proejtos a medida que avanço na graduação deEngenahria de software.\n\n Criativo, compormetido e reposnavel, sou um excelente profisisonaldisposto a crescer e aprender cada vez mais !""",
+                    ),
+                    SkillsWidget(),
+                    ProjectWidget(projects: projects),
+                    ContactWidget(),
+                  ],
+                ),
+              ),
             ),
-            AboutWidget(
-              position: "Desenvolvedor Flutter",
-              apresentation:
-                  """Com 3 anos de experiencia com desenvolviemnto flutter, tenho desenvolvido e prestadosuporte a plicações, sempre levando em consideração um codigo limpo e ergonazado.\n\n Possui conhecimento em outras tecnologias as quais também ultilizo ao desenvolver um nova soluçõa, tenho dedicado tempo a estudo de assuntos mais importantes como aruitetur, padrões de proejtos a medida que avanço na graduação deEngenahria de software.\n\n Criativo, compormetido e reposnavel, sou um excelente profisisonaldisposto a crescer e aprender cada vez mais !""",
-            ),
-            SkillsWidget(),
-            ProjectWidget(projects: projects),
-            ContactWidget(),
-          ],
-        ),
       ),
     );
   }
