@@ -30,7 +30,7 @@ class _SkillsWidgetState extends State<SkillsWidget> {
                       children: [
                         SizedBox(
                           width: widget.contexParent.maxWidth * 0.9,
-                          height: widget.contexParent.maxWidth * 0.4,
+                          height: widget.contexParent.maxWidth * 0.3,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.spaceAround,

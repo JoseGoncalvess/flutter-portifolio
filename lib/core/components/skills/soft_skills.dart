@@ -8,7 +8,7 @@ class SoftSkills extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width:
           contexParent != null
               ? contexParent!.maxWidth * 0.35

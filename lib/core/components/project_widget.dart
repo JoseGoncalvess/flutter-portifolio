@@ -21,8 +21,8 @@ class _ProjectWidgetState extends State<ProjectWidget> {
       onHorizontalDragUpdate: (details) {
         if (details.primaryDelta! < 0) {
           _pageController.nextPage(
-            duration: Duration(milliseconds: 300),
-            curve: Curves.ease,
+            duration: Duration(milliseconds: 200),
+            curve: Curves.bounceInOut,
           );
         } else {
           _pageController.previousPage(
@@ -38,7 +38,7 @@ class _ProjectWidgetState extends State<ProjectWidget> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Expanded(
-              flex: 3,
+              flex: 2,
               child: PageView.builder(
                 physics: NeverScrollableScrollPhysics(),
                 controller:
@@ -60,9 +60,9 @@ class _ProjectWidgetState extends State<ProjectWidget> {
               ),
             ),
             SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.1,
+              height: MediaQuery.sizeOf(context).height * 0.05,
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: List.generate(
                   widget.projects.length,

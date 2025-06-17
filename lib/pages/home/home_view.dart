@@ -18,7 +18,9 @@ class HomeView extends HomeViewModel {
         builder:
             (context, constraints) => Center(
               child: Container(
-                constraints: BoxConstraints(maxWidth: 800),
+                constraints: BoxConstraints(
+                  maxWidth: MediaQuery.sizeOf(context).width * 0.9,
+                ),
                 height: constraints.maxHeight,
                 child: PageView(
                   scrollDirection: Axis.vertical,

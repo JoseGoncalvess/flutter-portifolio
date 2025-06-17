@@ -65,7 +65,7 @@ class _ProjectCardState extends State<ProjectCard> {
                         widget.description,
                         style: GoogleFonts.roboto(
                           color: Colors.white,
-                          fontSize: widget.constexParent!.maxWidth * 0.02,
+                          fontSize: widget.constexParent!.maxWidth * 0.018,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -139,7 +139,7 @@ class _ProjectCardState extends State<ProjectCard> {
                       widget.title,
                       style: GoogleFonts.bebasNeue(
                         color: prymariColor,
-                        fontSize: MediaQuery.sizeOf(context).width * 0.09,
+                        fontSize: MediaQuery.sizeOf(context).width * 0.08,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
