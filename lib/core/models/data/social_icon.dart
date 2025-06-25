@@ -1,5 +1,6 @@
 class SocialIcon {
   final String img;
   final String url;
-  SocialIcon({required this.img, this.url = ""});
+  final String socialNike;
+  SocialIcon({required this.img, this.url = "", required this.socialNike});
 }

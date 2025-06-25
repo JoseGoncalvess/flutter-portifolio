@@ -37,14 +37,14 @@ class HomeView extends HomeViewModel {
                       constexParent: constraints,
                       position: "Desenvolvedor Flutter",
                       apresentation:
-                          """Com 3 anos de experiencia com desenvolviemnto flutter, tenho desenvolvido e prestadosuporte a plicações, sempre levando em consideração um codigo limpo e ergonazado.\n\n Possui conhecimento em outras tecnologias as quais também ultilizo ao desenvolver um nova soluçõa, tenho dedicado tempo a estudo de assuntos mais importantes como aruitetur, padrões de proejtos a medida que avanço na graduação deEngenahria de software.\n\n Criativo, compormetido e reposnavel, sou um excelente profisisonaldisposto a crescer e aprender cada vez mais !""",
+                          """Com 3 anos de experiencia com desenvolviemnto flutter, tenho desenvolvido e prestadosuporte a plicações, sempre levando em consideração um codigo limpo e ergonazado.\n Possui conhecimento em outras tecnologias as quais também ultilizo ao desenvolver um nova soluçõa, tenho dedicado tempo a estudo de assuntos mais importantes como aruitetur, padrões de proejtos a medida que avanço na graduação de Engenahria de software.\n Criativo, compormetido e reposnavel, sou um excelente profisisonaldisposto a crescer e aprender cada vez mais !""",
                     ),
                     SkillsWidget(contexParent: constraints),
                     ProjectWidget(
                       projects: projects,
                       constexParent: constraints,
                     ),
-                    ContactWidget(),
+                    ContactWidget(constexParent: constraints),
                   ],
                 ),
               ),

@@ -90,7 +90,7 @@ class _AboutWidgetState extends State<AboutWidget> {
                           ),
                         ),
                         SizedBox(
-                          height: MediaQuery.sizeOf(context).height * 0.43,
+                          height: MediaQuery.sizeOf(context).height * 0.45,
                           width:
                               MediaQuery.sizeOf(context).width < 768
                                   ? null
@@ -106,7 +106,7 @@ class _AboutWidgetState extends State<AboutWidget> {
                               fontWeight: FontWeight.w500,
                               fontSize:
                                   MediaQuery.sizeOf(context).width < 768
-                                      ? MediaQuery.sizeOf(context).width * 0.04
+                                      ? MediaQuery.sizeOf(context).width * 0.035
                                       : MediaQuery.sizeOf(context).width * 0.03,
                             ),
                           ),

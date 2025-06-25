@@ -34,14 +34,18 @@ final List<SocialIcon> socialIcons = [
   SocialIcon(
     img: "../assets/icons/youtube.png",
     url: "https://www.youtube.com/@DevJGs/featured",
+    socialNike: "@DevJGs"
+
   ),
   SocialIcon(
     img: "../assets/icons/linkedin.png",
     url: "https://www.linkedin.com/in/jgoncalvessf",
+    socialNike: "@jgoncalvessf"
   ),
   SocialIcon(
     img: "../assets/icons/github.png",
     url: "https://github.com/JoseGoncalvess",
+    socialNike: "@JoseGoncalvess"
   ),
 ];
 

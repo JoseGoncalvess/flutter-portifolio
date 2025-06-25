@@ -4,7 +4,8 @@ import 'package:portifolio/core/app.constants.dart';
 import 'package:portifolio/core/services/impl/url_service_impl.dart';
 
 class ContactWidget extends StatefulWidget {
-  const ContactWidget({super.key});
+  const ContactWidget({super.key, this.constexParent});
+  final BoxConstraints? constexParent;
 
   @override
   State<ContactWidget> createState() => _ContactWidgetState();
@@ -23,7 +24,214 @@ class _ContactWidgetState extends State<ContactWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return widget.constexParent!.maxWidth > 800
+        ? Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            SizedBox(
+              // decoration: BoxDecoration(color: Colors.blue),
+              width: widget.constexParent!.maxWidth,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: widget.constexParent!.maxWidth * 0.45,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      spacing: 8,
+                      children: [
+                        Text(
+                          "Contate-me",
+                          style: GoogleFonts.bebasNeue(
+                            color: Colors.white,
+                            fontSize: widget.constexParent!.maxWidth * 0.022,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(
+                          width: widget.constexParent!.maxWidth * 0.4,
+                          child: TextField(
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600,
+                            ),
+                            decoration: InputDecoration(
+                              hintText: "Assunto",
+                              hintStyle: GoogleFonts.robotoSlab(
+                                color: Colors.white,
+                                fontSize: widget.constexParent!.maxWidth * 0.02,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              filled: true,
+                              fillColor: Colors.grey,
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: prymariColor,
+                                  width: 2,
+                                ),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: widget.constexParent!.maxWidth * 0.4,
+                          child: TextField(
+                            maxLines: 8,
+                            keyboardType: TextInputType.multiline,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            decoration: InputDecoration(
+                              filled: true,
+                              fillColor: Colors.grey,
+                              hintText: "Mensagem",
+                              hintStyle: GoogleFonts.robotoSlab(
+                                color: Colors.white,
+                                fontSize: widget.constexParent!.maxWidth * 0.02,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: prymariColor,
+                                  width: 2,
+                                ),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+                          ),
+                        ),
+                        ElevatedButton.icon(
+                          style: ButtonStyle(
+                            fixedSize: WidgetStateProperty.all(Size(200, 60)),
+                            backgroundColor: WidgetStateProperty.all(
+                              prymariColor,
+                            ),
+                            shape: WidgetStateProperty.all(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+                          ),
+                          onPressed: () {},
+                          label: Text(
+                            "Enviar",
+                            style: GoogleFonts.bebasNeue(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w300,
+                              fontSize: widget.constexParent!.maxWidth * 0.02,
+                            ),
+                          ),
+                          icon: Icon(
+                            size: widget.constexParent!.maxWidth * 0.03,
+                            Icons.keyboard_double_arrow_up_rounded,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: widget.constexParent!.maxWidth * 0.45,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      spacing: 10,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          spacing: 15,
+                          children:
+                              socialIcons
+                                  .map(
+                                    (icon) => GestureDetector(
+                                      onTap:
+                                          () => UrlServiceImpl().openLink(
+                                            url: icon.url,
+                                          ),
+                                      child: MouseRegion(
+                                        onEnter:
+                                            (_) => setState(
+                                              () =>
+                                                  _hoverStates[icon.img] = true,
+                                            ),
+                                        onExit:
+                                            (_) => setState(
+                                              () =>
+                                                  _hoverStates[icon.img] =
+                                                      false,
+                                            ),
+                                        child: AnimatedContainer(
+                                          duration: Duration(milliseconds: 200),
+                                          curve: Curves.decelerate,
+                                          child: Row(
+                                            spacing: 10,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              AnimatedContainer(
+                                                key: ValueKey(icon.img),
+                                                duration: Duration(
+                                                  milliseconds: 100,
+                                                ),
+                                                curve: Curves.decelerate,
+                                                width:
+                                                    _hoverStates[icon.img]!
+                                                        ? 60
+                                                        : 40,
+                                                height:
+                                                    _hoverStates[icon.img]!
+                                                        ? 60
+                                                        : 40,
+                                                decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                    image: AssetImage(icon.img),
+                                                  ),
+                                                ),
+                                              ),
+                                              Text(
+                                                icon.socialNike,
+                                                style: GoogleFonts.robotoSlab(
+                                                  color: Colors.white,
+                                                  fontSize:
+                                                      widget
+                                                          .constexParent!
+                                                          .maxWidth *
+                                                      0.01,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                  .toList(),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            Text(
+              textAlign: TextAlign.center,
+              "Sempre trago algum conteúdo, ou compartilho minha jornada",
+              style: GoogleFonts.robotoSlab(
+                color: Colors.white,
+                fontSize: widget.constexParent!.maxWidth * 0.012,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        )
+        : SizedBox(
       height: MediaQuery.sizeOf(context).height,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -94,7 +302,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                     fixedSize:
                         MediaQuery.sizeOf(context).width < 768
                             ? null
-                            : WidgetStateProperty.all(Size(300, 100)),
+                                : WidgetStateProperty.all(Size(200, 60)),
                     backgroundColor: WidgetStateProperty.all(prymariColor),
                     shape: WidgetStateProperty.all(
                       RoundedRectangleBorder(
@@ -111,7 +319,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                       fontSize:
                           MediaQuery.sizeOf(context).width < 768
                               ? null
-                              : MediaQuery.sizeOf(context).width * 0.04,
+                                  : MediaQuery.sizeOf(context).width * 0.03,
                     ),
                   ),
                   icon: Icon(
