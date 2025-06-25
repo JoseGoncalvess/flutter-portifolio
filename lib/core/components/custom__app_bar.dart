@@ -23,6 +23,7 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
 
 class CustomAppBarState extends State<CustomAppBar> {
   bool _opacity = false;
+  bool _themerOption = false;
 
   @override
   void initState() {
@@ -49,20 +50,20 @@ class CustomAppBarState extends State<CustomAppBar> {
           widget.titlePage,
           style: GoogleFonts.roboto(
             color: Colors.white,
-            fontSize: MediaQuery.sizeOf(context).width * 0.05,
+            fontSize: 30,
             fontWeight: FontWeight.bold,
           ),
         ),
       ),
-      centerTitle: true,
       actions: [
-        IconButton(
-          onPressed: () => widget.ontap!(),
-          icon: Icon(
-            Icons.menu,
-            color: prymariColor,
-            size: MediaQuery.sizeOf(context).width * 0.07,
-          ),
+        Switch(
+          value: _themerOption,
+          thumbIcon: WidgetStatePropertyAll(Icon(Icons.lightbulb)),
+          onChanged: (value) {
+            setState(() {
+              _themerOption = value;
+            });
+          },
         ),
       ],
     );

@@ -18,6 +18,7 @@ class HomeView extends HomeViewModel {
         builder:
             (context, constraints) => Center(
               child: Container(
+                decoration: BoxDecoration(color: backgroudColor),
                 constraints: BoxConstraints(
                   maxWidth: MediaQuery.sizeOf(context).width * 0.9,
                 ),
