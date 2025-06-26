@@ -190,7 +190,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                                                 AnimatedContainer(
                                                   key: ValueKey(icon.img),
                                                   duration: Duration(
-                                                    milliseconds: 100,
+                                                    seconds: 1,
                                                   ),
                                                   curve: Curves.decelerate,
                                                   width:
@@ -393,7 +393,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                                         ),
                                     child: AnimatedContainer(
                                       key: ValueKey(icon.img),
-                                      duration: Duration(milliseconds: 200),
+                                      duration: Duration(seconds: 1),
                                       curve: Curves.bounceOut,
                                       width: _hoverStates[icon.img]! ? 60 : 40,
                                       height: _hoverStates[icon.img]! ? 60 : 40,

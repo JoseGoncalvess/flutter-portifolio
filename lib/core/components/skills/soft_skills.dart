@@ -52,7 +52,7 @@ class SoftSkills extends StatelessWidget {
                     style: GoogleFonts.bebasNeue(
                       color: prymariColor,
                       fontSize: MediaQuery.sizeOf(context).width * 0.07,
-                      fontWeight: FontWeight.w400,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   Column(

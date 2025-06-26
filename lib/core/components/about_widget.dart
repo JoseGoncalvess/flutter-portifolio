@@ -82,7 +82,7 @@ class _AboutWidgetState extends State<AboutWidget> {
                           child: Text(
                             textAlign: TextAlign.center,
                             widget.position,
-                            style: GoogleFonts.roboto(
+                            style: GoogleFonts.bebasNeue(
                               color: prymariColor,
                               fontSize: MediaQuery.sizeOf(context).width * 0.05,
                               fontWeight: FontWeight.bold,
@@ -101,7 +101,7 @@ class _AboutWidgetState extends State<AboutWidget> {
                                 MediaQuery.sizeOf(context).width < 768
                                     ? TextAlign.justify
                                     : TextAlign.center,
-                            style: GoogleFonts.roboto(
+                            style: GoogleFonts.robotoSlab(
                               color: Colors.white,
                               fontWeight: FontWeight.w500,
                               fontSize:
