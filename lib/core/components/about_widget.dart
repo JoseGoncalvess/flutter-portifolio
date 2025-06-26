@@ -38,7 +38,7 @@ class _AboutWidgetState extends State<AboutWidget> {
                         child: Text(
                           textAlign: TextAlign.left,
                           widget.position,
-                          style: GoogleFonts.robotoSlab(
+                          style: GoogleFonts.bebasNeue(
                             color: prymariColor,
                             fontSize: widget.constexParent.maxWidth * 0.03,
                             fontWeight: FontWeight.bold,
@@ -51,9 +51,9 @@ class _AboutWidgetState extends State<AboutWidget> {
                         child: Text(
                           widget.apresentation,
                           textAlign: TextAlign.left,
-                          style: GoogleFonts.roboto(
+                          style: GoogleFonts.robotoSlab(
                             color: Colors.white,
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.w300,
                             fontSize: widget.constexParent.maxWidth * 0.01,
                           ),
                         ),
@@ -64,7 +64,7 @@ class _AboutWidgetState extends State<AboutWidget> {
                     backgroundColor: Colors.transparent,
                     foregroundColor: Colors.grey,
                     backgroundImage: AssetImage("../assets/profile.png"),
-                    radius: 110,
+                    radius: 150,
                   ),
                 ],
               )

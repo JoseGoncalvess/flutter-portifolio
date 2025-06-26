@@ -45,7 +45,7 @@ class _SkillsWidgetState extends State<SkillsWidget> {
                   ),
                   Text(
                     "Indiomas",
-                    style: GoogleFonts.robotoSlab(
+                    style: GoogleFonts.bebasNeue(
                       color: prymariColor,
                       fontSize: widget.contexParent.maxWidth * 0.03,
                       fontWeight: FontWeight.bold,
@@ -63,7 +63,7 @@ class _SkillsWidgetState extends State<SkillsWidget> {
                                 .map(
                                   (l) => Text(
                                     l,
-                                    style: GoogleFonts.roboto(
+                                    style: GoogleFonts.robotoSlab(
                                       color: Colors.white,
                                       fontSize:
                                           widget.contexParent.maxWidth * 0.015,

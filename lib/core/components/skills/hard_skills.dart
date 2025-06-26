@@ -20,7 +20,7 @@ class HardSkills extends StatelessWidget {
                   children: [
                     Text(
                       "Tecnologias",
-                      style: GoogleFonts.robotoSlab(
+                      style: GoogleFonts.bebasNeue(
                         color: prymariColor,
                         fontSize: contexParent!.maxWidth * 0.03,
                         fontWeight: FontWeight.bold,
@@ -58,7 +58,7 @@ class HardSkills extends StatelessWidget {
                   children: [
                     Text(
                       "Tecnologias",
-                      style: GoogleFonts.robotoSlab(
+                      style: GoogleFonts.bebasNeue(
                         color: prymariColor,
                         fontSize: MediaQuery.sizeOf(context).width * 0.06,
                         fontWeight: FontWeight.bold,

@@ -63,9 +63,9 @@ class _ProjectCardState extends State<ProjectCard> {
                       child: Text(
                         textAlign: TextAlign.center,
                         widget.description,
-                        style: GoogleFonts.roboto(
+                        style: GoogleFonts.robotoSlab(
                           color: Colors.white,
-                          fontSize: widget.constexParent!.maxWidth * 0.018,
+                          fontSize: widget.constexParent!.maxWidth * 0.016,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -77,7 +77,7 @@ class _ProjectCardState extends State<ProjectCard> {
                         children: [
                           Text(
                             "TECNOLOGIAS:",
-                            style: GoogleFonts.roboto(
+                            style: GoogleFonts.bebasNeue(
                               color: Colors.white,
                               fontSize: widget.constexParent!.maxWidth * 0.02,
                               fontWeight: FontWeight.bold,
@@ -148,7 +148,7 @@ class _ProjectCardState extends State<ProjectCard> {
                       child: Text(
                         textAlign: TextAlign.center,
                         widget.description,
-                        style: GoogleFonts.roboto(
+                        style: GoogleFonts.robotoSlab(
                           color: Colors.white,
                           fontSize:
                               MediaQuery.sizeOf(context).width < 768
@@ -165,7 +165,7 @@ class _ProjectCardState extends State<ProjectCard> {
                         children: [
                           Text(
                             "TECNOLOGIAS:",
-                            style: GoogleFonts.roboto(
+                            style: GoogleFonts.bebasNeue(
                               color: Colors.white,
                               fontSize: MediaQuery.sizeOf(context).width * 0.03,
                               fontWeight: FontWeight.bold,

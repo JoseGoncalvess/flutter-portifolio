@@ -21,7 +21,7 @@ class SoftSkills extends StatelessWidget {
                 ? [
                   Text(
                     "Pessoais:",
-                    style: GoogleFonts.robotoSlab(
+                    style: GoogleFonts.bebasNeue(
                       color: prymariColor,
                       fontSize: contexParent!.maxWidth * 0.03,
                       fontWeight: FontWeight.bold,
@@ -36,7 +36,7 @@ class SoftSkills extends StatelessWidget {
                               (skill) => Text(
                                 skill,
                                 textAlign: TextAlign.justify,
-                                style: GoogleFonts.roboto(
+                                style: GoogleFonts.robotoSlab(
                                   color: Colors.white,
                                   fontSize: contexParent!.maxWidth * 0.02,
                                   fontWeight: FontWeight.w500,
@@ -49,7 +49,7 @@ class SoftSkills extends StatelessWidget {
                 : [
                   Text(
                     "Pessoais:",
-                    style: GoogleFonts.roboto(
+                    style: GoogleFonts.bebasNeue(
                       color: prymariColor,
                       fontSize: MediaQuery.sizeOf(context).width * 0.07,
                       fontWeight: FontWeight.w400,
@@ -62,7 +62,7 @@ class SoftSkills extends StatelessWidget {
                               (skill) => Text(
                                 skill,
                                 textAlign: TextAlign.justify,
-                                style: GoogleFonts.roboto(
+                                style: GoogleFonts.robotoSlab(
                                   color: Colors.white,
                                   fontSize:
                                       MediaQuery.sizeOf(context).width * 0.05,
