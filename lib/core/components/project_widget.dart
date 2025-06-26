@@ -51,6 +51,7 @@ class _ProjectWidgetState extends State<ProjectWidget> {
                 itemCount: widget.projects.length,
                 itemBuilder:
                     (context, index) => ProjectCard(
+                      urlProject: widget.projects[index].path,
                       constexParent: widget.constexParent,
                       title: widget.projects[index].title,
                       description: widget.projects[index].decription,

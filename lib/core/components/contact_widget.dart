@@ -13,6 +13,8 @@ class ContactWidget extends StatefulWidget {
 
 class _ContactWidgetState extends State<ContactWidget> {
   final Map<String, bool> _hoverStates = {};
+  TextEditingController subjectController = TextEditingController();
+  TextEditingController bodyController = TextEditingController();
 
   @override
   void initState() {
@@ -52,6 +54,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                         SizedBox(
                           width: widget.constexParent!.maxWidth * 0.4,
                           child: TextField(
+                            controller: subjectController,
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w600,
@@ -78,6 +81,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                         SizedBox(
                           width: widget.constexParent!.maxWidth * 0.4,
                           child: TextField(
+                            controller: bodyController,
                             maxLines: 8,
                             keyboardType: TextInputType.multiline,
                             style: TextStyle(
@@ -115,7 +119,12 @@ class _ContactWidgetState extends State<ContactWidget> {
                               ),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed:
+                              () => UrlServiceImpl().createdEmail(
+                                subjectController.text,
+                                bodyController.text,
+                                context,
+                              ),
                           label: Text(
                             "Enviar",
                             style: GoogleFonts.bebasNeue(
@@ -138,7 +147,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      spacing: 10,
+                      spacing: 15,
                       children: [
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -148,6 +157,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                               socialIcons
                                   .map(
                                     (icon) => GestureDetector(
+                                  
                                       onTap:
                                           () => UrlServiceImpl().openLink(
                                             url: icon.url,
@@ -277,6 +287,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                       ),
                     ),
                     TextField(
+                      controller: subjectController,
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
@@ -299,6 +310,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                     SizedBox(
                       width: double.infinity,
                       child: TextField(
+                        controller: bodyController,
                         maxLines: 5,
                         keyboardType: TextInputType.multiline,
                         style: TextStyle(
@@ -338,7 +350,12 @@ class _ContactWidgetState extends State<ContactWidget> {
                           ),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed:
+                          () => UrlServiceImpl().createdEmail(
+                            subjectController.text,
+                            bodyController.text,
+                            context,
+                          ),
                       label: Text(
                         "Enviar",
                         style: TextStyle(

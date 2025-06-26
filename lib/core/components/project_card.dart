@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portifolio/core/app.constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:portifolio/core/services/impl/url_service_impl.dart';
 
 class ProjectCard extends StatefulWidget {
   const ProjectCard({
@@ -11,10 +12,12 @@ class ProjectCard extends StatefulWidget {
     required this.description,
     required this.tecnologys,
     this.constexParent,
+    required this.urlProject,
   });
   final String title;
   final String img;
   final String description;
+  final String urlProject;
   final List<String> tecnologys;
   final BoxConstraints? constexParent;
 
@@ -50,12 +53,18 @@ class _ProjectCardState extends State<ProjectCard> {
                             (context, error, stackTrace) => Container(),
                       ),
                     ),
-                    Text(
-                      widget.title,
-                      style: GoogleFonts.bebasNeue(
-                        color: prymariColor,
-                        fontSize: widget.constexParent!.maxWidth * 0.03,
-                        fontWeight: FontWeight.bold,
+                    InkWell(
+                      enableFeedback: true,
+                      onTap:
+                          () =>
+                              UrlServiceImpl().openLink(url: widget.urlProject),
+                      child: Text(
+                        widget.title,
+                        style: GoogleFonts.bebasNeue(
+                          color: prymariColor,
+                          fontSize: widget.constexParent!.maxWidth * 0.03,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                     Padding(
@@ -135,12 +144,18 @@ class _ProjectCardState extends State<ProjectCard> {
                         ),
                       ),
                     ),
-                    Text(
-                      widget.title,
-                      style: GoogleFonts.bebasNeue(
-                        color: prymariColor,
-                        fontSize: MediaQuery.sizeOf(context).width * 0.08,
-                        fontWeight: FontWeight.bold,
+                    InkWell(
+                      enableFeedback: true,
+                      onTap:
+                          () =>
+                              UrlServiceImpl().openLink(url: widget.urlProject),
+                      child: Text(
+                        widget.title,
+                        style: GoogleFonts.bebasNeue(
+                          color: prymariColor,
+                          fontSize: MediaQuery.sizeOf(context).width * 0.08,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                     Padding(
