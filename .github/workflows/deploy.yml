@@ -31,6 +31,6 @@ jobs:
         run: npm install -g vercel
 
       - name: Deploy para produção com Vercel
-        run: vercel deploy --prod --cwd build/web --token=$VERCEL_TOKEN
+        run: vercel deploy --prod --cwd build/web --token=$VERCEL_TOKEN --yes
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
