@@ -87,7 +87,7 @@ class _ProjectCardState extends State<ProjectCard> {
                           widget.description,
                           style: GoogleFonts.robotoSlab(
                             color: Colors.white,
-                            fontSize: widget.constexParent!.maxWidth * 0.016,
+                            fontSize: widget.constexParent!.maxWidth * 0.015,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
