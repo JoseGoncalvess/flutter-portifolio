@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portifolio/core/app.constants.dart';
+import 'package:portifolio/core/helpers/houver_efect.dart';
 
 class SoftSkills extends StatelessWidget {
   const SoftSkills({super.key, this.contexParent});
@@ -33,13 +34,15 @@ class SoftSkills extends StatelessWidget {
                     children:
                         skills
                             .map(
-                              (skill) => Text(
-                                skill,
-                                textAlign: TextAlign.justify,
-                                style: GoogleFonts.robotoSlab(
-                                  color: Colors.white,
-                                  fontSize: contexParent!.maxWidth * 0.02,
-                                  fontWeight: FontWeight.w500,
+                              (skill) => HouverEfect(
+                                child: Text(
+                                  skill,
+                                  textAlign: TextAlign.justify,
+                                  style: GoogleFonts.robotoSlab(
+                                    color: Colors.white,
+                                    fontSize: contexParent!.maxWidth * 0.02,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                                 ),
                               ),
                             )

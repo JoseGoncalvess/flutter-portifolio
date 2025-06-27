@@ -52,7 +52,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                           ),
                         ),
                         SizedBox(
-                          width: widget.constexParent!.maxWidth * 0.4,
+                          width: widget.constexParent!.maxWidth * 0.3,
                           child: TextField(
                             controller: subjectController,
                             style: TextStyle(
@@ -63,7 +63,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                               hintText: "Assunto",
                               hintStyle: GoogleFonts.robotoSlab(
                                 color: Colors.white,
-                                fontSize: widget.constexParent!.maxWidth * 0.02,
+                                fontSize: widget.constexParent!.maxWidth * 0.01,
                                 fontWeight: FontWeight.bold,
                               ),
                               filled: true,
@@ -79,7 +79,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                           ),
                         ),
                         SizedBox(
-                          width: widget.constexParent!.maxWidth * 0.4,
+                          width: widget.constexParent!.maxWidth * 0.3,
                           child: TextField(
                             controller: bodyController,
                             maxLines: 8,
@@ -94,7 +94,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                               hintText: "Mensagem",
                               hintStyle: GoogleFonts.robotoSlab(
                                 color: Colors.white,
-                                fontSize: widget.constexParent!.maxWidth * 0.02,
+                                fontSize: widget.constexParent!.maxWidth * 0.01,
                                 fontWeight: FontWeight.bold,
                               ),
                               border: OutlineInputBorder(
@@ -109,7 +109,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                         ),
                         ElevatedButton.icon(
                           style: ButtonStyle(
-                            fixedSize: WidgetStateProperty.all(Size(200, 60)),
+                            fixedSize: WidgetStateProperty.all(Size(190, 50)),
                             backgroundColor: WidgetStateProperty.all(
                               prymariColor,
                             ),
@@ -130,11 +130,11 @@ class _ContactWidgetState extends State<ContactWidget> {
                             style: GoogleFonts.bebasNeue(
                               color: Colors.white,
                               fontWeight: FontWeight.w300,
-                              fontSize: widget.constexParent!.maxWidth * 0.02,
+                              fontSize: widget.constexParent!.maxWidth * 0.015,
                             ),
                           ),
                           icon: Icon(
-                            size: widget.constexParent!.maxWidth * 0.03,
+                            size: widget.constexParent!.maxWidth * 0.025,
                             Icons.keyboard_double_arrow_up_rounded,
                             color: Colors.white,
                           ),

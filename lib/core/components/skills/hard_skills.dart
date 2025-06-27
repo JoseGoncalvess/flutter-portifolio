@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portifolio/core/app.constants.dart';
+import 'package:portifolio/core/helpers/houver_efect.dart';
 
 class HardSkills extends StatelessWidget {
   const HardSkills({super.key, this.contexParent});
@@ -40,10 +41,12 @@ class HardSkills extends StatelessWidget {
                       itemBuilder:
                           (context, index) => Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Image.asset(
-                              width: 20,
-                              height: 20,
-                              hardSkills[index],
+                            child: HouverEfect(
+                              child: Image.asset(
+                                width: 20,
+                                height: 20,
+                                hardSkills[index],
+                              ),
                             ),
                           ),
                     ),
@@ -78,9 +81,11 @@ class HardSkills extends StatelessWidget {
                       itemBuilder:
                           (context, index) => Padding(
                             padding: const EdgeInsets.all(3.0),
-                            child: Image.asset(
-                              hardSkills[index],
-                              fit: BoxFit.contain,
+                            child: HouverEfect(
+                              child: Image.asset(
+                                hardSkills[index],
+                                fit: BoxFit.contain,
+                              ),
                             ),
                           ),
                     ),

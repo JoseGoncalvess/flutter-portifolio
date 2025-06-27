@@ -56,15 +56,15 @@ class CustomAppBarState extends State<CustomAppBar> {
         ),
       ),
       actions: [
-        Switch(
-          value: _themerOption,
-          thumbIcon: WidgetStatePropertyAll(Icon(Icons.lightbulb)),
-          onChanged: (value) {
-            setState(() {
-              _themerOption = value;
-            });
-          },
-        ),
+        // Switch(
+        //   value: _themerOption,
+        //   thumbIcon: WidgetStatePropertyAll(Icon(Icons.lightbulb)),
+        //   onChanged: (value) {
+        //     setState(() {
+        //       _themerOption = value;
+        //     });
+        //   },
+        // ),
       ],
     );
   }

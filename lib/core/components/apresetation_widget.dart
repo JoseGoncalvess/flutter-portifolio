@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portifolio/core/app.constants.dart';
+import 'package:portifolio/core/helpers/animated_Item.dart';
 
 class ApresetationWidget extends StatefulWidget {
   const ApresetationWidget({
@@ -28,36 +29,45 @@ class _ApresetationWidgetState extends State<ApresetationWidget> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            widget.nameTitle,
-            style: GoogleFonts.robotoSlab(
-              color: Colors.white,
-              fontSize:
-                  MediaQuery.sizeOf(context).width > 360
-                      ? widget.constexParent.maxWidth * 0.02
-                      : MediaQuery.sizeOf(context).width * 0.04,
+          AnimatedItem(
+            delayMilliseconds: 100,
+            child: Text(
+              widget.nameTitle,
+              style: GoogleFonts.robotoSlab(
+                color: Colors.white,
+                fontSize:
+                    MediaQuery.sizeOf(context).width > 360
+                        ? widget.constexParent.maxWidth * 0.02
+                        : MediaQuery.sizeOf(context).width * 0.04,
+              ),
             ),
           ),
-          Text(
-            widget.position,
-            style: GoogleFonts.bebasNeue(
-              color: prymariColor,
-              fontSize:
-                  MediaQuery.sizeOf(context).width > 360
-                      ? widget.constexParent.maxWidth * 0.06
-                      : MediaQuery.sizeOf(context).width * 0.09,
-              fontWeight: FontWeight.bold,
+          AnimatedItem(
+            delayMilliseconds: 500,
+            child: Text(
+              widget.position,
+              style: GoogleFonts.bebasNeue(
+                color: prymariColor,
+                fontSize:
+                    MediaQuery.sizeOf(context).width > 360
+                        ? widget.constexParent.maxWidth * 0.06
+                        : MediaQuery.sizeOf(context).width * 0.09,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
-          Text(
-            widget.description,
-            textAlign: TextAlign.center,
-            style: GoogleFonts.robotoSlab(
-              color: Colors.white,
-              fontSize:
-                  MediaQuery.sizeOf(context).width > 360
-                      ? widget.constexParent.maxWidth * 0.03
-                      : MediaQuery.sizeOf(context).width * 0.04,
+          AnimatedItem(
+            delayMilliseconds: 700,
+            child: Text(
+              widget.description,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.robotoSlab(
+                color: Colors.white,
+                fontSize:
+                    MediaQuery.sizeOf(context).width > 360
+                        ? widget.constexParent.maxWidth * 0.03
+                        : MediaQuery.sizeOf(context).width * 0.04,
+              ),
             ),
           ),
         ],

@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portifolio/core/app.constants.dart';
 import 'package:portifolio/core/components/skills/hard_skills.dart';
 import 'package:portifolio/core/components/skills/soft_skills.dart';
+import 'package:portifolio/core/helpers/animated_Item.dart';
 
 class SkillsWidget extends StatefulWidget {
   const SkillsWidget({super.key, required this.contexParent});
@@ -53,25 +54,29 @@ class _SkillsWidgetState extends State<SkillsWidget> {
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: SizedBox(
-                      width: widget.contexParent.maxWidth * 0.9,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children:
-                            languages
-                                .map(
-                                  (l) => Text(
-                                    l,
-                                    style: GoogleFonts.robotoSlab(
-                                      color: Colors.white,
-                                      fontSize:
-                                          widget.contexParent.maxWidth * 0.015,
-                                      fontWeight: FontWeight.bold,
+                    child: AnimatedItem(
+                      delayMilliseconds: 300,
+                      child: SizedBox(
+                        width: widget.contexParent.maxWidth * 0.9,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children:
+                              languages
+                                  .map(
+                                    (l) => Text(
+                                      l,
+                                      style: GoogleFonts.robotoSlab(
+                                        color: Colors.white,
+                                        fontSize:
+                                            widget.contexParent.maxWidth *
+                                            0.015,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
-                                  ),
-                                )
-                                .toList(),
+                                  )
+                                  .toList(),
+                        ),
                       ),
                     ),
                   ),
@@ -137,24 +142,27 @@ class _SkillsWidgetState extends State<SkillsWidget> {
                   ),
                   Expanded(
                     flex: 1,
-                    child: SizedBox(
-                      width: MediaQuery.sizeOf(context).width,
-                      child: Column(
-                        children:
-                            languages
-                                .map(
-                                  (l) => Text(
-                                    l,
-                                    style: GoogleFonts.roboto(
-                                      color: Colors.white,
-                                      fontSize:
-                                          MediaQuery.sizeOf(context).width *
-                                          0.04,
-                                      fontWeight: FontWeight.bold,
+                    child: AnimatedItem(
+                      delayMilliseconds: 500,
+                      child: SizedBox(
+                        width: MediaQuery.sizeOf(context).width,
+                        child: Column(
+                          children:
+                              languages
+                                  .map(
+                                    (l) => Text(
+                                      l,
+                                      style: GoogleFonts.roboto(
+                                        color: Colors.white,
+                                        fontSize:
+                                            MediaQuery.sizeOf(context).width *
+                                            0.04,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
-                                  ),
-                                )
-                                .toList(),
+                                  )
+                                  .toList(),
+                        ),
                       ),
                     ),
                   ),
