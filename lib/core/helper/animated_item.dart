@@ -4,7 +4,6 @@ class AnimatedItem extends StatelessWidget {
 final Widget child;
   final int delayMilliseconds;
 
-
   const AnimatedItem({ super.key, required this.child, required this.delayMilliseconds });
 
    @override

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portifolio/core/app.constants.dart';
-import 'package:portifolio/core/helpers/houver_efect.dart';
+import 'package:portifolio/core/helper/houver_efect.dart';
 
 class SoftSkills extends StatelessWidget {
   const SoftSkills({super.key, this.contexParent});

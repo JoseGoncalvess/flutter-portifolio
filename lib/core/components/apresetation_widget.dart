@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portifolio/core/app.constants.dart';
-import 'package:portifolio/core/helpers/animated_Item.dart';
+import 'package:portifolio/core/helper/animated_Item.dart';
 
 class ApresetationWidget extends StatefulWidget {
   const ApresetationWidget({
