@@ -37,6 +37,9 @@ jobs:
 
       - name: Gerar .vercel/output com vercel build
         run: vercel build --prod --token=$VERCEL_TOKEN
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
 
       - name: Deploy para produção com --prebuilt
         run: vercel deploy --prod --prebuilt --token=$VERCEL_TOKEN
