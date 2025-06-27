@@ -1,10 +1,9 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portifolio/core/app.constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:portifolio/core/helper/animated_Item.dart';
+import 'package:portifolio/core/helper/animateditem.dart';
 import 'package:portifolio/core/helper/houver_efect.dart';
 import 'package:portifolio/core/services/impl/url_service_impl.dart';
 
