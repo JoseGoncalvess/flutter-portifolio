@@ -32,6 +32,8 @@ jobs:
 
       - name: Vincular projeto Vercel (sem prompt)
         run: vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
       - name: Gerar .vercel/output com vercel build
         run: vercel build --prod --token=$VERCEL_TOKEN
