@@ -32,13 +32,13 @@ class HomeView extends HomeViewModel {
                       nameTitle: "OPA, EU SOU GONÇALVES",
                       position: "MOBILE DEVELOPER",
                       description:
-                          """Academico em Engenharia de software\n com um bom tempo como desenvolvedor mobile resolvendo muito bug.""",
+                          """Acadêmico em Engenharia de software\n com um bom tempo como desenvolvedor mobile resolvendo muito bug.""",
                     ),
                     AboutWidget(
                       constexParent: constraints,
                       position: "Desenvolvedor Flutter",
                       apresentation:
-                          """Com 3 anos de experiencia com desenvolviemnto flutter, tenho desenvolvido e prestadosuporte a plicações, sempre levando em consideração um codigo limpo e ergonazado.\n Possui conhecimento em outras tecnologias as quais também ultilizo ao desenvolver um nova soluçõa, tenho dedicado tempo a estudo de assuntos mais importantes como aruitetur, padrões de proejtos a medida que avanço na graduação de Engenahria de software.\n Criativo, compormetido e reposnavel, sou um excelente profisisonaldisposto a crescer e aprender cada vez mais !""",
+                          """Com 3 anos de experiencia com desenvolvimento flutter, tenho desenvolvido e prestado suporte a aplicações, sempre levando em consideração um código limpo e organizado.\n Possuo conhecimento em outras tecnologias as quais também utilizo ao desenvolver um nova solução, tenho dedicado tempo a estudo de assuntos mais importantes como arquitetura, padrões de projetos à medida que avanço na graduação de Engenharia de software.\n Criativo, comprometido e responsável, sou um excelente profissional disposto a crescer e aprender cada vez mais !""",
                     ),
                     SkillsWidget(contexParent: constraints),
                     ProjectWidget(
