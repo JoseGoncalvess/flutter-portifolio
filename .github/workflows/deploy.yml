@@ -15,8 +15,9 @@ jobs:
       - name: Instalar Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.22.0' # ou a versão que você usa
+          flutter-version: '3.32.5' # ou superior
           channel: 'stable'
+
 
       - name: Ativar suporte web
         run: flutter config --enable-web
