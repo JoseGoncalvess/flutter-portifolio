@@ -23,8 +23,36 @@ class HomeView extends HomeViewModel {
                   maxWidth: MediaQuery.sizeOf(context).width * 0.9,
                 ),
                 height: constraints.maxHeight,
-                child: PageView(
+                child:
+                    constraints.maxWidth > 800
+                        ? SingleChildScrollView(
+                          child: Column(
+                            children: [
+                              ApresetationWidget(
+                                constexParent: constraints,
+                                nameTitle: "OPA, EU SOU GONÇALVES",
+                                position: "MOBILE DEVELOPER",
+                                description:
+                                    """Acadêmico em Engenharia de software\n com um bom tempo como desenvolvedor mobile resolvendo muito bug.""",
+                              ),
+                              AboutWidget(
+                                constexParent: constraints,
+                                position: "Desenvolvedor Flutter",
+                                apresentation:
+                                    """Com 3 anos de experiencia com desenvolvimento flutter, tenho desenvolvido e prestado suporte a aplicações, sempre levando em consideração um código limpo e organizado.\n Possuo conhecimento em outras tecnologias as quais também utilizo ao desenvolver um nova solução, tenho dedicado tempo a estudo de assuntos mais importantes como arquitetura, padrões de projetos à medida que avanço na graduação de Engenharia de software.\n Criativo, comprometido e responsável, sou um excelente profissional disposto a crescer e aprender cada vez mais !""",
+                              ),
+                              SkillsWidget(contexParent: constraints),
+                              ProjectWidget(
+                                projects: projects,
+                                constexParent: constraints,
+                              ),
+                              ContactWidget(constexParent: constraints),
+                            ],
+                          ),
+                        )
+                        : PageView(
                   scrollDirection: Axis.vertical,
+                          physics: BouncingScrollPhysics(),
                   onPageChanged: (value) => updateViewTitle(value),
                   children: [
                     ApresetationWidget(
