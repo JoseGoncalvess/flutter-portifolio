@@ -1,5 +1,3 @@
-
-
 <div align="center">
 <h1>Flutter Portfólio</h1>
 <img style="border-radius: 4px;" src="./assets/project_view.png" alt="Layout do Projeto" width="400px">
@@ -11,7 +9,7 @@ Este projeto é um portfólio digital desenvolvido em Flutter, com o objetivo de
 
 Irei está melhorando o projeto a cada versão buscando aplicar os melhores recursos do framework **Flutter** trazendo uma experiência amigável e uma apresentação sólida das minhas habilidades.
 
-## ⛓ Estrutura do Projeto 
+## ⛓ Estrutura do Projeto
 
 - 📂 **lib/**: Código principal da aplicação Flutter.
 - 📂**assets/**: Imagens, ícones e outros recursos estáticos.
