@@ -32,6 +32,7 @@ class _ContactWidgetState extends State<ContactWidget> {
           children: [
             SizedBox(
               width: widget.constexParent!.maxWidth,
+              height: widget.constexParent!.maxHeight,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -142,7 +143,7 @@ class _ContactWidgetState extends State<ContactWidget> {
                       ],
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     width: widget.constexParent!.maxWidth * 0.45,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -157,7 +158,6 @@ class _ContactWidgetState extends State<ContactWidget> {
                               socialIcons
                                   .map(
                                     (icon) => GestureDetector(
-                                  
                                       onTap:
                                           () => UrlServiceImpl().openLink(
                                             url: icon.url,
