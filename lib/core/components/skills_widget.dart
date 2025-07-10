@@ -45,7 +45,7 @@ class _SkillsWidgetState extends State<SkillsWidget> {
                     ),
                   ),
                   Text(
-                    "Indiomas",
+                    "Idiomas",
                     style: GoogleFonts.bebasNeue(
                       color: prymariColor,
                       fontSize: widget.contexParent.maxWidth * 0.03,
@@ -133,7 +133,7 @@ class _SkillsWidgetState extends State<SkillsWidget> {
                     ),
                   ),
                   Text(
-                    "Indiomas",
+                    "Idiomas",
                     style: GoogleFonts.bebasNeue(
                       color: prymariColor,
                       fontSize: MediaQuery.sizeOf(context).width * 0.06,
